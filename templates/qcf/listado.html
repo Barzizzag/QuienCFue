@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Listado completo</title>
+</head>
+<body>
+    <div class="table-responsive">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th class="d-none d-md-block">Información</th>
+                <th>Foto</th>
+                <th>Enlace</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for dato in datos%}
+            <tr>
+                <th>{{dato[0]}}</th><!--Id-->
+                <th>{{dato[1]}}</th><!--NOMBRE-->
+                <th class="d-none d-md-block">{{dato[3]}}</th><!--INFORMACION-->
+                <th>
+                    <img class="img-thumbnail"src="uploads/{{dato[2]}}" width="100"alt="Foto">
+                </th><!--FOTO-->
+                <th>{{dato[4]}}</th>
+                <th> <a href="/editar/{{dato[0]}}">Editar</a>
+                    <a href="/destroy/{{dato[0]}}">Eliminar</a>
+                </th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

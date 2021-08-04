@@ -1,0 +1,13 @@
+h2{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color:blue;
+}
+.nombre{
+    background-color: cadetblue;
+}
+.bio{
+    background-color: burlywood;
+}
